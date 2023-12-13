@@ -1,8 +1,11 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors"
+
 import vehicleCategory from "./routes/vehicle-route.js"
 import vehicleType from "./routes/vehicle-type-route.js"
 import vehicleName from "./routes/vehicle-name-route.js"
+import userBookings from "./routes/bookings.js"
 
 const PORT = process.env.SERVER_PORT || 3000
 const app = express()
@@ -25,6 +28,9 @@ app.use("/api/v2", vehicleType)
 
 // api route for vehicles
 app.use("/api/v3", vehicleName)
+
+// api route for user booking
+app.use("/api/v4", userBookings)
 
 // test route for testing api
 app.get("/", (req, res) => {
