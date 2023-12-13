@@ -8,9 +8,10 @@ import { Router } from "express"
 
 const router = Router()
 
-// route for fetching type of vehicles by no. of wheels
+// route for fetching type of vehicles by their types
 router.get("/vehicle/:type", type, getVehicleName)
 
+// route for creating new vehicle name
 router.post(
   "/vehicle/type/create",
   typeVehicleNameValidation,

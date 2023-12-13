@@ -1,6 +1,7 @@
 import { validationResult } from "express-validator"
 import { db } from "../database/db.js"
 
+// controller for fetching vehicle types
 const getVehicleType = async (req, res) => {
   try {
     const errors = validationResult(req)
@@ -34,6 +35,7 @@ const getVehicleType = async (req, res) => {
   }
 }
 
+// controller for creating a new vehicle type
 const createVehicleType = async (req, res) => {
   try {
     const errors = validationResult(req)

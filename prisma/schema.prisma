@@ -18,7 +18,7 @@ model category {
 
 model type {
   id         String     @id @default(auto()) @map("_id") @db.ObjectId
-  category   category?  @relation(fields: [categoryId], references: [id])
+  category   category?  @relation(fields: [categoryId], references: [id], onDelete: Cascade)
   categoryId String?    @db.ObjectId
   name       String     @unique
   vehicles   vehicles[]
@@ -26,7 +26,7 @@ model type {
 
 model vehicles {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  type        type?   @relation(fields: [typeId], references: [id])
+  type        type?   @relation(fields: [typeId], references: [id], onDelete: Cascade)
   typeId      String? @db.ObjectId
   vehicleName String  @unique
 }

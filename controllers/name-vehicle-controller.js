@@ -1,6 +1,8 @@
 import { validationResult } from "express-validator"
+
 import { db } from "../database/db.js"
 
+// controller for fetching vehicle names
 const getVehicleName = async (req, res) => {
   try {
     const errors = validationResult(req)
@@ -34,6 +36,7 @@ const getVehicleName = async (req, res) => {
   }
 }
 
+// controller for creating and listing a newVehicle name
 const createVehicleName = async (req, res) => {
   try {
     const errors = validationResult(req)

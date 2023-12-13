@@ -1,6 +1,8 @@
 import { validationResult } from "express-validator"
+
 import { db } from "../database/db.js"
 
+// controller for fetching categories
 const getVehicleCategory = async (req, res) => {
   try {
     const errors = validationResult(req)
@@ -29,6 +31,7 @@ const getVehicleCategory = async (req, res) => {
   }
 }
 
+// controller fro creating a new category
 const createVehicleCategory = async (req, res) => {
   const { category } = req?.body
 
